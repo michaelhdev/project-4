@@ -26,7 +26,8 @@ SECRET_KEY = 'gzrqob(s6p6tg7qj6hi!8ns%#f3ix6c&!e$wuw^td5kr4=4ae+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dcef83cc31af4beb87a9209e6babfc0e.vfs.cloud9.us-east-1.amazonaws.com']
+ALLOWED_HOSTS = ['dcef83cc31af4beb87a9209e6babfc0e.vfs.cloud9.us-east-1.amazonaws.com',
+'uniattractor.herokuapp.com']
 
 
 # Application definition
