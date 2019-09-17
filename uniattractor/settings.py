@@ -26,8 +26,7 @@ SECRET_KEY = 'gzrqob(s6p6tg7qj6hi!8ns%#f3ix6c&!e$wuw^td5kr4=4ae+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dcef83cc31af4beb87a9209e6babfc0e.vfs.cloud9.us-east-1.amazonaws.com',
-'uniattractor.herokuapp.com']
+ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'), os.environ.get('HOSTNAME')]
 
 
 # Application definition
@@ -82,7 +81,7 @@ WSGI_APPLICATION = 'uniattractor.wsgi.application'
 #    }
 #}
 
-DATABASES = { 'default': dj_database_url.parse("postgres://jwbrhnmgsaeblv:2b90b1e49da4a9da19e2cdad41d3e6d36dc93eea624538e956f5fe7e08603236@ec2-79-125-4-72.eu-west-1.compute.amazonaws.com:5432/d72jhv9eljtjsu")}
+DATABASES = { 'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
