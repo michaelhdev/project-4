@@ -16,11 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from home.views import get_homepage
-from users.views import logout, login
+from users.views import logout, login, registration
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', get_homepage, name="index"),
-    url(r'^users/logout/$', logout, name="logout"),
-    url(r'^users/login/$', login, name="login")
+    url('logout/', logout, name="logout"),
+    url('login/', login, name="login"),
+    url('register/', registration, name="registration")
 ]

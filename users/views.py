@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
+from django.contrib.auth.decorators import login_required
 from users.forms import UserLoginForm
 
 # Create your views here.
-
+@login_required
 def logout(request):
     """Log the user out"""
     auth.logout(request)
@@ -12,6 +13,9 @@ def logout(request):
     
 def login(request):
     """Return login page"""
+    if request.user.is_authenticated:
+        return redirect(reverse('index'))
+    
     if request.method == "POST":
         login_form = UserLoginForm(request.POST)
         
@@ -23,8 +27,13 @@ def login(request):
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have logged in successfully!")
+                return redirect(reverse('index'))
             else:
                 login_form.add_error(None, "Your have entered an incorrect username or password")
     else:
         login_form = UserLoginForm()
     return render(request, 'login.html', {'login_form': login_form})
+    
+def registration(request):
+    """Return registration page"""
+    return render(request, 'registration.html')
