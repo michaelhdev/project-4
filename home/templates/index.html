@@ -7,9 +7,10 @@
     <title>Uniattractor - Bugs and features</title>
 </head>
 <body>
+    <h1>Home</h1>
     <nav>
     <ul>    
-    <li><a href="#">Login</a></li>
+    <li><a href="{% url 'login' %}">Login</a></li>
     <li><a href="{% url 'logout' %}">Logout</a></li>
     <li><a href="#">Bugs</a></li>
     <li><a href="#">Features</a></li>
@@ -26,6 +27,6 @@
        
    </div>
    {% endif %}
-   <h1>Welcome to the Uniattractor Bugs and features site</h1>
+   
 </body>
 </html>
