@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
+from django.contrib import auth
 
 # Create your views here.
+
+def logout(request):
+    """Log the user out"""
+    auth.logout(request)
+    return redirect(reverse('index'))
