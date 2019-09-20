@@ -1,4 +1,3 @@
-*.sqlite3
-*.pyc
-.~c9
+.c9/
 __pycahce__/
+*.sqlite3
