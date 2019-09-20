@@ -17,10 +17,12 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from home.views import get_homepage
 from users import urls as users_urls
+from bugs import urls as bug_urls
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', get_homepage, name="index"),
-    url(r'^accounts/', include(users_urls))
+    url(r'^accounts/', include(users_urls)),
+    url(r'^posts/', include(bug_urls)),
 ]
