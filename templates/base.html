@@ -21,7 +21,7 @@
                     {% if user.is_authenticated %}
                          <li>Welcome {{ user }}</li>
                         <li><a href="#">Features</a></li>
-                        <li><a href="{% url 'get_bugs' %}">Bugs</a></li>
+                        <li><a href="{% url 'get_bugs'%}">Bugs</a></li>
                         <li><a href="{% url 'account' %}">Account</a></li>
                         <li><a href="{% url 'logout' %}">Logout</a></li>
                     {% else %}
@@ -47,7 +47,7 @@
     </header>
     
    <div class="container">
-        <h1>{% block page_heading %}{% endblock %}</h1>
+        <h3>{% block page_heading %}{% endblock %}</h3>
         <hr>
            {% if messages %}
            <div>

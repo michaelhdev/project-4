@@ -1,17 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="row">
+    <a href="{% url 'new_bug' %}"  class="btn btn-default">Add Bug</a>
+    
     <ul class="collapsible" data-collapsible="accordion">
     {% for bug in bugs %}
     <li>
-            <div class="collapsible-header">
+            {% if bug.id == active_bug %}
+                <div id="active" class="collapsible-header active">
+            {% elif active_bug == "Initial" %}
+                <div class="collapsible-header active">
+            {% else %}
+                <div class="collapsible-header">
+            {% endif %}
                     <strong>Bug Name</strong> : {{ bug.title }} - <strong> Create By </strong> : {{ bug.author }} - <strong>Votes</strong> : {{ bug.votes }}  - <strong>Date Added</strong> : {{ bug.created_date }}
                     <i class="material-icons">expand_more</i>
             </div>
             <div class="collapsible-body">
                 <span>
                 {{bug.description}} 
+                <a href="{% url 'vote_bug_up' bug.id %}"  class="btn btn-default"><i class="fas fa-arrow-up"></i> <strong>Vote Up</strong></a>
+                
             </span>
+            <p><a href="{% url 'bug_detail' bug.id %}"  class="btn btn-default">View Bug</a></p>
             </div>
         </li>
     {% endfor %}

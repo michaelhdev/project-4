@@ -24,5 +24,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', get_homepage, name="index"),
     url(r'^accounts/', include(users_urls)),
-    url(r'^posts/', include(bug_urls)),
+    url(r'^bugs/', include(bug_urls)),
 ]
