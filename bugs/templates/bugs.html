@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <ul class="collapsible" data-collapsible="accordion">
+    {% for bug in bugs %}
+    <li>
+            <div class="collapsible-header">
+                    <strong>Bug Name</strong> : {{ bug.title }} - <strong> Create By </strong> : {{ bug.author }} - <strong>Votes</strong> : {{ bug.votes }}  - <strong>Date Added</strong> : {{ bug.created_date }}
+                    <i class="material-icons">expand_more</i>
+            </div>
+            <div class="collapsible-body">
+                <span>
+                {{bug.description}} 
+            </span>
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+    

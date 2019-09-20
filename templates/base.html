@@ -21,7 +21,7 @@
                     {% if user.is_authenticated %}
                          <li>Welcome {{ user }}</li>
                         <li><a href="#">Features</a></li>
-                        <li><a href="#">Bugs</a></li>
+                        <li><a href="{% url 'get_bugs' %}">Bugs</a></li>
                         <li><a href="{% url 'account' %}">Account</a></li>
                         <li><a href="{% url 'logout' %}">Logout</a></li>
                     {% else %}
@@ -34,7 +34,7 @@
                     {% if user.is_authenticated %}
                          <li>Welcome {{ user }}</li>
                         <li><a href="#">Features</a></li>
-                        <li><a href="#">Bugs</a></li>
+                        <li><a href="{% url 'get_bugs' %}">Bugs</a></li>
                         <li><a href="{% url 'account' %}">Account</a></li>
                         <li><a href="{% url 'logout' %}">Logout</a></li>
                     {% else %}
