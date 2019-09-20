@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+                <div>
+                    <p>{{ bug.title }}</p>
+                    <p><span class="boldtext">Created by:</span> {{ bug.author }} </p>
+                    <p><span class="boldtext">Created on:</span> {{ bug.created_date }} </p>
+                    <p><span class="boldtext">Views:</span> {{bug.views}}</p>
+                    <p><span class="boldtext">Votes:</span> {{ bug.votes }}</p>
+                     <p><span class="boldtext">Description:</span> {{ bug.description }}</p>
+                    <a href="{% url 'get_bugs' %}" class="btn btn-default">Back to Bugs</a>
+                    <a href="{% url 'edit_bug' bug.id %}" class="btn btn-default">Edit Bugs</a>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
