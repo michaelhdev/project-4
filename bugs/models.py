@@ -7,9 +7,9 @@ class Bug(models.Model):
     """
     A single bug
     """
-    PENDING = 'Pending'
-    INPROGRESS = 'In progress'
-    COMPLETED = 'Completed'
+    PENDING = 'pending'
+    INPROGRESS = 'progressed'
+    COMPLETED = 'completed'
     
     STATUS_CHOICES = (
         (PENDING, 'Pending'),

@@ -1,0 +1,23 @@
+.pending{
+    background-color: red;
+}
+
+.progressed{
+    background-color: orange;
+}
+
+.completed{
+    background-color: green;
+}
+
+.btn-blue{
+    width: 150px;
+}
+
+.btn-red{
+    width: 150px;
+}
+
+.status-bar{
+    margin-top: 20px;
+}
