@@ -2,8 +2,4 @@
 *.sqlite3
 env.py
 *.pyc
- uniattractor/__pycache__/
 __pycache__/
-*/__pycache__/
-*/*/__pycache__/
-*/*/*/__pycache__/
