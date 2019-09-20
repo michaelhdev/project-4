@@ -10,12 +10,12 @@ class Bug(models.Model):
     PENDING = 'Pending'
     INPROGRESS = 'In progress'
     COMPLETED = 'Completed'
+    
     STATUS_CHOICES = (
         (PENDING, 'Pending'),
         (INPROGRESS, 'In progress'),
         (COMPLETED, 'Completed')
     )
-    
     
     title = models.CharField(max_length=200)
     description = models.TextField()
