@@ -22,11 +22,36 @@ def bug_detail(request, pk):
     not found
     """
     bug = get_object_or_404(Bug, pk=pk)
-    bug.views += 1
-    bug.save()
-    return render(request, "bugDetail.html", {'bug': bug})
+    user = request.user
+    bugComments = CommentForBug.objects.filter(bug=bug)
+    if request.method == 'POST':
+        bugCommentForm = CommentForBugForm(request.POST)
+        if bugCommentForm.is_valid():
+            bugCommentForm.instance.author = user
+            bugCommentForm.instance.bug = bug
+            bugCommentForm.save()
+            return redirect('bug_detail', pk)
+        else:
+            bugCommentForm = CommentForBugForm()
+    else:
+        bugCommentForm = CommentForBugForm()
+        
+    return render(request, "bugDetail.html", {'bug': bug, 'comments' : bugComments, 'commentForm': bugCommentForm})
 
-def vote_bug_up(request, pk):
+"""def vote_bug_up(request, pk):
+    
+    A view that returns a single
+    bug object based on the bug ID (pk) and
+    render it to the 'bugdetail.html' template.
+    Or return a 404 error if the bug is
+    not found
+   
+    bug = get_object_or_404(Bug, pk=pk)
+    bug.votes += 1
+    bug.save()
+    return redirect(get_bugs) """
+    
+def vote_bug(request, pk):
     """
     A view that returns a single
     bug object based on the bug ID (pk) and
@@ -35,8 +60,12 @@ def vote_bug_up(request, pk):
     not found
     """
     bug = get_object_or_404(Bug, pk=pk)
-    bug.votes += 1
-    bug.save()
+    user = request.user
+    if user in bug.votes.all():
+        bug.votes.remove(user)
+    else:
+        bug.votes.add(user)
+    
     return redirect(get_bugs)
     
 def create_or_edit_bug(request, pk=None):
@@ -57,6 +86,13 @@ def create_or_edit_bug(request, pk=None):
         form = BugForm(instance=bug)
     return render(request, 'bugForm.html', {'form': form})
     
+def sort_bugs(request):
+    
+    selection = request.GET['sort_by']
+    
+    bugs = Bug.objects.all().order_by(selection)
+        
+    return render(request, "bugs.html", {'bugs': bugs})
     
     
     

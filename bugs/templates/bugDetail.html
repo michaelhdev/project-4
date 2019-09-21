@@ -12,7 +12,28 @@
                     <a href="{% url 'edit_bug' bug.id %}" class="btn btn-default">Edit Bugs</a>
                     <hr>
                 </div>
+    </div>
+    <div class="row">
+        {% if comments %}
+        {% for comment in comments %}
+        <div class="row">
+            <div class="col">
+                <p>by: {{ comment.author }} ({{ comment.created_date }})</p>
+                <p>{{ comment.comment }}</p>
             </div>
         </div>
+        {% endfor %}
+    </div>
+        {% endif %}
+    <div class="row">
+        <form  method="POST">
+            {% csrf_token %}
+            <div class="comment">
+                {{ commentForm }}
+            </div>
+            <div>
+                <button class='btn' type="submit">Comment</button>
+            </div>
+        </form>
     </div>
 {% endblock %}

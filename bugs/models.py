@@ -21,8 +21,8 @@ class Bug(models.Model):
     description = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=12, choices=STATUS_CHOICES, default=PENDING)
-    votes = models.IntegerField(default=0)
-    views = models.IntegerField(default=0)
+    votes = models.ManyToManyField(User, related_name='votes', blank=True)
+    comments = models.IntegerField(default=0)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __unicode__(self):
