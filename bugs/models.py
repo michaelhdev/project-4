@@ -25,7 +25,7 @@ class Bug(models.Model):
     comments = models.IntegerField(default=0)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
 class CommentForBug(models.Model):

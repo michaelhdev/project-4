@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'home',
     'bugs',
     'users',
+    'features',
 ]
 
 MIDDLEWARE = [

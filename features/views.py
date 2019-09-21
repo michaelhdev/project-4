@@ -38,18 +38,6 @@ def feature_detail(request, pk):
         
     return render(request, "featureDetail.html", {'feature': feature, 'comments' : featureComments, 'commentForm': featureCommentForm})
 
-"""def vote_feature_up(request, pk):
-    
-    A view that returns a single
-    feature object based on the feature ID (pk) and
-    render it to the 'featuredetail.html' template.
-    Or return a 404 error if the feature is
-    not found
-   
-    feature = get_object_or_404(Feature, pk=pk)
-    feature.votes += 1
-    feature.save()
-    return redirect(get_features) """
     
 def vote_feature(request, pk):
     """
