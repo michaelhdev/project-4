@@ -54,11 +54,11 @@
                     </div>
                     <div class="col s2">
                         <div class="row">
-                            {% if user not in feature.votes.all %}
-                                <a class="btn btn-blue" href="{% url 'vote_feature' feature.id %}"><i class="fas fa-arrow-up"></i>Vote Up</a>
-                            {% else %}
-                                <a class="btn btn-blue" href="{% url 'vote_feature' feature.id %}">Cancel Vote</a>
-                            {% endif %}
+                        <form method="post" action="{% url 'add_to_cart' feature.id %}">
+                            {% csrf_token %}
+                            <input type="hidden" id="quantity" name="quantity" value="1">
+                            <button class="btn btn-blue" type="submit">Vote Up</button>
+                        </form>
                         </div>
                         <div class="row">
                             <a href="{% url 'feature_detail' feature.id %}"  class="btn btn-red">View feature</a>
