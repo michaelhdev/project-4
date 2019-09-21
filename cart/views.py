@@ -16,18 +16,13 @@ def add_to_cart(request, id):
     return redirect(reverse('index'))
 
 
-def adjust_cart(request, id):
+def delete_from_cart(request, id):
     """
-    Adjust the quantity of the specified product to the specified
-    amount
+    Deletes the donation from the cart
     """
-    quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
 
-    if quantity > 0:
-        cart[id] = quantity
-    else:
-        cart.pop(id)
+    cart.pop(id)
     
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
