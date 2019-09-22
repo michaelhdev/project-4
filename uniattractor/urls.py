@@ -20,6 +20,7 @@ from users import urls as users_urls
 from bugs import urls as bug_urls
 from cart import urls as cart_urls
 from features import urls as feature_urls
+from checkout import urls as checkout_urls
 
 
 urlpatterns = [
@@ -27,6 +28,7 @@ urlpatterns = [
     url(r'^$', get_homepage, name="index"),
     url(r'^accounts/', include(users_urls)),
     url(r'^bugs/', include(bug_urls)),
+    url(r'^checkout/', include(checkout_urls)),
     url(r'^cart/', include(cart_urls)),
     url(r'^features/', include(feature_urls)),
 ]
