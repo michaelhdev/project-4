@@ -15,11 +15,14 @@
     <header>
         <nav>
             <div class="nav-wrapper">
+                
                 <a href="#" class="brand-logo">Uniattractor</a>
+               
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     {% if user.is_authenticated %}
-                         <li>Welcome {{ user }}</li>
+                         <li>Welcomed {{ user }}</li>
                         <li><a href="{% url 'get_features'%}">Features</a></li>
                         <li><a href="{% url 'get_bugs'%}">Bugs</a></li>
                         <li><a href="{% url 'account' %}">Account</a></li>
@@ -29,6 +32,15 @@
                         <li><a href="{% url 'registration' %}">Register</a></li>
                     {% endif %}
                 </ul>
+                 <div class="right cart-icon">
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'view_cart' %}" >Cart
+                            {% if product_count > 0 %}
+                            <label class="badge badge-warning">{{ product_count }}</label>
+                            {% endif %}
+                            </a>
+                    {% endif %}
+                    </div>
                 <ul class="side-nav" id="mobile-demo">
                    
                     {% if user.is_authenticated %}
@@ -42,10 +54,13 @@
                         <li><a href="{% url 'registration' %}">Register</a></li>
                     {% endif %}
                 </ul>
+                 
             </div>
+           
         </nav>
     </header>
     
+                    
    <div class="container">
         <h3>{% block page_heading %}{% endblock %}</h3>
         <hr>
