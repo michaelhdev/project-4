@@ -1,24 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="headingTitle">Shopping Cart</div>
 <div class="row">
     {% for item in cart_items %}
-        
-        <div class="col s12">
-            <h3>{{ item.feature.title }}</h3>
+    <div class="col s12 ">
+    <ul class="collection">
+        <li class="collection-item avatar">
+          <img src="images/yuna.jpg" alt="" class="circle">
+          <span class="title">Donate <i class="fas fa-euro-sign"></i>10 for feature: {{ item.feature.title }}</span>
             <p>{{ item.feature.description }}</p>
-            <p>Quantity: {{ item.feature.description }}</p>
-            <p>Donate 10 Euro</p>
-            <p>
-                <a class="btn" href="{% url 'delete_from_cart' item.id %}">Delete</a>
-            </p>
-        </div>
+      <a class="secondary-content" href="{% url 'delete_from_cart' item.id %}"><i class="material-icons">delete_forever</i></a>
+    </li>
+    </ul>
     </div>
     {% endfor %}
+</div>
 <div class="row">
-    <p>Total</p>
-    <p><i class="fas fa-euro-sign"></i>{{ total }}</p>
+    <div class="col l6 s12">
+
+                </div>
+    <div class="col l4 offset-l2 s12 total-container">
+    <p>Total: <i class="fas fa-euro-sign"></i>{{ total }}</p>
     <a href="{% url 'checkout'%}" class="btn">Checkout</a>
+                </div>
+    
 </div>
 
 {% endblock %}
