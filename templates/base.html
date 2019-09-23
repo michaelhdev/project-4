@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
     <title>{% block page_title %} {% endblock %}</title>
-    {% block head_js %}
-    {% endblock head_js %}
 </head>
 <body>
     <header>
@@ -100,6 +98,8 @@
 
         })
     </script>
+    {% block head_js %}
+    {% endblock head_js %}
     <footer class="page-footer">
         <div class="container">
             <div class="row">
