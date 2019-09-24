@@ -1,17 +1,32 @@
 from django.shortcuts import render, redirect, reverse
+from django.contrib import messages
 
 def view_cart(request):
     """A View that renders the cart contents page"""
     return render(request, "cart.html")
 
 
+# def add_to_cart(request, id):
+#     """Add a quantity of the specified product to the cart"""
+#     quantity = int(request.POST.get('quantity'))
+#     cart = request.session.get('cart', {})
+#     cart[id] = cart.get(id, quantity)
+
+#     request.session['cart'] = cart
+#     return redirect(reverse('index'))
+
 def add_to_cart(request, id):
-    """Add a quantity of the specified product to the cart"""
-    quantity = int(request.POST.get('quantity'))
+    """Add a donation for a feature to the cart"""
+    
+    donation = int(request.POST.get('donation'))
     cart = request.session.get('cart', {})
-    cart[id] = cart.get(id, quantity)
+    if id in cart:
+        cart[id] = cart[id] + donation
+    else:
+        cart[id] = cart.get(id, donation)
 
     request.session['cart'] = cart
+    messages.success(request, f'Donation added, ready for checkout')
     return redirect(reverse('index'))
 
 

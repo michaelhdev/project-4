@@ -10,12 +10,10 @@ def cart_contents(request):
 
     cart_items = []
     total = 0
-    product_count = 0
     
-    for id, quantity in cart.items():
+    for id, donation in cart.items():
         feature = get_object_or_404(Feature, pk=id)
-        total += quantity * 10
-        product_count += quantity
-        cart_items.append({'id': id, 'quantity': quantity, 'feature': feature})
+        total += donation
+        cart_items.append({'id': id, 'donation': donation, 'feature': feature})
     
-    return {'cart_items': cart_items, 'total': total, 'product_count': product_count}
+    return {'cart_items': cart_items, 'total': total}
