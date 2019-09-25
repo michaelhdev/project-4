@@ -9,7 +9,7 @@ def get_features(request):
     A view that will return a list
     of Features that were display them on the 'features.html' template
     """
-    features = Feature.objects.all().order_by('-votes')
+    features = Feature.objects.all().order_by('totalDonation')
     return render(request, "features.html", {'features': features})
 
 
@@ -39,22 +39,19 @@ def feature_detail(request, pk):
     return render(request, "featureDetail.html", {'feature': feature, 'comments' : featureComments, 'commentForm': featureCommentForm})
 
     
-def vote_feature(request, pk):
-    """
-    A view that returns a single
-    feature object based on the feature ID (pk) and
-    render it to the 'featuredetail.html' template.
-    Or return a 404 error if the feature is
-    not found
-    """
-    feature = get_object_or_404(Feature, pk=pk)
-    user = request.user
-    if user in feature.votes.all():
-        feature.votes.remove(user)
-    else:
-        feature.votes.add(user)
-    
-    return redirect(get_features)
+# def vote_feature(request, pk):
+#     """
+#     A view that returns a single
+#     feature object based on the feature ID (pk) and
+#     render it to the 'featuredetail.html' template.
+#     Or return a 404 error if the feature is
+#     not found
+#     """
+#     feature = get_object_or_404(Feature, pk=pk)
+#     user = request.user
+#     if user in feature.votes.all():
+#         feature.votes.remove(user)
+#     return redirect(get_features)
     
 def create_or_edit_feature(request, pk=None):
     """
