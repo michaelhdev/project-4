@@ -22,7 +22,7 @@ class Feature(models.Model):
     description = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=12, choices=STATUS_CHOICES, default=PENDING)
-    votes = models.ManyToManyField(User, related_name='feature_votes', blank=True)
+    totalDonation = models.IntegerField(default=0)
     comments = models.IntegerField(default=0)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 

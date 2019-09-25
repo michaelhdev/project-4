@@ -1,54 +1,65 @@
-{% extends "base.html" %}
-{% load static from staticfiles %}
-
-{% block head_js %}
+{% extends "base.html" %} {% load static from staticfiles %} {% block head_js %}
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
     //<![CDATA[
-        Stripe.publishableKey = '{{ publishable }}';
+    Stripe.publishableKey = '{{ publishable }}';
     //]]>
 </script>
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
-{% endblock %}
-
-{% block content %}
-<div class="row row-flex">
+{% endblock %} {% block content %}
+<div class="headingTitle">Checkout</div>
+<div class="row">
     {% for item in cart_items %}
-        <div>
-            <div>
-
-                <div>
-                    <h3>{{ item.feature.title }}</h3>
-                    <p>{{ item.feature.description }}</p>
-                    <p>{{ item.quantity }}</p>
-                </div>
-            </div>
-        </div>
+    <div class="col s12 ">
+        <ul class="collection">
+            <li class="collection-item avatar">
+                <img src="images/yuna.jpg" alt="" class="circle">
+                <span class="title">Donate <i class="fas fa-euro-sign"></i>{{ item.donation }} for feature: {{ item.feature.title }}</span>
+                <p>{{ item.feature.description }}</p>
+            </li>
+        </ul>
+    </div>
     {% endfor %}
 </div>
 <div class="row">
-    <p>Total</p>
-    <p>{{ total }}</p>
-</div>
+    <div class="col l6 s12">
 
-<form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
-    <legend>Payment Details</legend>
-
-    <div id="credit-card-errors" style="display: none;">
-        <div id="alert-message block-message error" id="stripe-error-message"></div>
     </div>
+    <div class="col l4 offset-l2 s12 total-container">
+        <p>Total: <i class="fas fa-euro-sign"></i>{{ total }}</p>
+    </div>
+
+</div>
 <div class="row">
-    <div class="col s6">
-        {{ order_form  }}
-    </div>
+    <div class="col s12">
+        <div class="collection">
+            <div class="collection-item">
+                <span class="card-title">Payment Details</span>
 
-    <div class="col s6" >
-        {{ payment_form }}
+                <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+                    <div class="row">
+                    <div id="credit-card-errors" style="display: none;">
+                        <div id="alert-message block-message error" id="stripe-error-message"></div>
+                    </div>
+                     </div>
+                    <div class="row">
+                        <div class="col s6">
+                            {{ order_form }}
+                        </div>
+
+                        <div class="col s6">
+                            {{ payment_form }}
+                        </div>
+                    </div>
+                    {% csrf_token %}
+                    <div class="row">
+                    <div>
+                        <input class=" btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+                    </div>
+                     </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
-    {% csrf_token %}
-    <div >
-        <input class=" btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
-    </div>
-</form>
 {% endblock %}
