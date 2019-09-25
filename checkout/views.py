@@ -25,13 +25,13 @@ def checkout(request):
 
             cart = request.session.get('cart', {})
             total = 0
-            for id, quantity in cart.items():
+            for id, donation in cart.items():
                 feature = get_object_or_404(Feature, pk=id)
-                total += quantity * 10
+                total += donation
                 order_line_item = OrderLineItem(
                     order=order,
                     product=feature,
-                    quantity=quantity
+                    donation=donation
                 )
                 order_line_item.save()
             
@@ -47,6 +47,11 @@ def checkout(request):
             
             if customer.paid:
                 messages.error(request, "You have successfully paid")
+                for id, donation in cart.items():
+                    feature = get_object_or_404(Feature, pk=id)
+                    feature.totalDonation = feature.totalDonation + donation
+                    feature.save(update_fields=["totalDonation"])
+                    
                 request.session['cart'] = {}
                 return redirect(reverse('get_features'))
             else:
