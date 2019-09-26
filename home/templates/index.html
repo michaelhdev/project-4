@@ -2,19 +2,16 @@
 
 {% block page_title %}Home Page {% endblock %}
 
-{% block page_heading %}Home {% endblock %}
-
-{% block content %}
-<!DOCTYPE HTML>
-<html>
-<head>
+ {% block head_js %}
 <script>
 window.onload = function() {
 
+
+{{bugs_pending}}
 var bugChart = new CanvasJS.Chart("bugChartContainer", {
 	animationEnabled: true,
 	title: {
-		text: "Bug Satus"
+		text: "Bug Status"
 	},
 	data: [{
 		type: "pie",
@@ -22,16 +19,16 @@ var bugChart = new CanvasJS.Chart("bugChartContainer", {
 		yValueFormatString: "##0.00\"%\"",
 		indexLabel: "{label} {y}",
 		dataPoints: [
-			{y: 50, label: "Done"},
-			{y: 25, label: " To do"},
-			{y: 25, label: "Inprogress"},
+			{y: "{{status.bugs_Completed}}", label: "Completed"},
+			{y: "{{status.bugs_pending}}", label: " Pending"},
+			{y: "{{status.bugs_inProgress}}", label: "In Progress"},
 		]
 	}]
 });
 var featureChart = new CanvasJS.Chart("featureChartContainer", {
 	animationEnabled: true,
 	title: {
-		text: "Feature Satus"
+		text: "Feature Status"
 	},
 	data: [{
 		type: "pie",
@@ -39,9 +36,9 @@ var featureChart = new CanvasJS.Chart("featureChartContainer", {
 		yValueFormatString: "##0.00\"%\"",
 		indexLabel: "{label} {y}",
 		dataPoints: [
-			{y: 50, label: "Done"},
-			{y: 25, label: " To do"},
-			{y: 25, label: "Inprogress"},
+			{y: "{{status.features_Completed}}", label: "Done"},
+			{y: "{{status.features_pending}}", label: " To do"},
+			{y: "{{status.features_inProgress}}", label: "Inprogress"},
 		]
 	}]
 });
@@ -50,18 +47,51 @@ featureChart.render();
 
 }
 </script>
-</head>
-<body>
+{% endblock %} {% block content %}
+<div class="headingTitle">Dashboard</div>
     <div class="row">
-        <div class="col s12 m6">
+        <div class="col s12 m6 collection">
             <div id="bugChartContainer" style="height: 300px; width: 100%;"></div>
             <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+            <div class="collection">
+            	Total Bugs: {{status.total_bugs}}
+            </div>
+            <div class="collection">
+            	Total Complete Bugs: {{status.bugs_Completed}}
+            </div>
+            <div class="collection">
+            	Total In Progress Bugs: {{status.bugs_inProgress}}
+            </div>
+            <div class="collection">
+            	Total Pending Bugs: {{status.bugs_pending}}
+            </div>
+            {% if user.is_authenticated %}
+            <div class="dashboard-button">
+                    <a href="{% url 'get_bugs' %}"  class="btn btn-default">View Bugs</a>
+            </div>
+            {% endif %}
+        
         </div>
-        <div class="col s12 m6">
+        <div class="col s12 m6 collection">
             <div id="featureChartContainer" style="height: 300px; width: 100%;"></div>
             <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+            <div class="collection">
+            	Total Features: {{status.total_features}}
+            </div>
+            <div class="collection">
+            	Total Complete Features: {{status.features_Completed}}
+            </div>
+            <div class="collection">
+            	Total In Progress Features: {{status.features_inProgress}}
+            </div>
+            <div class="collection">
+            	Total Pending Features: {{status.features_pending}}
+            </div>
+            {% if user.is_authenticated %}
+            <div class="dashboard-button">
+                    <a href="{% url 'get_features'%}"  class="btn btn-default dashboard-button">View Features</a>
+            </div>
+            {% endif %}
         </div>
     </div>
-</body>
-</html>
 {% endblock %}
