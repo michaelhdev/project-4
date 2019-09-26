@@ -1,19 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="headingTitle">Bug Details</div>
+<div class="headingTitle">Feature Details</div>
     <div class="row collection">
                 <div>
-                    <p><strong>Bug Name:</strong> {{bug.title }}</p>
-                    <p><strong>Created by:</strong> {{ bug.author }} </p>
-                    <p><strong>Created on:</strong> {{ bug.created_date }} </p>
-                    <p><strong>Views:</strong> {{bug.views}}</p>
-                    <p><strong>Votes:</strong> {{ bug.votes }}</p>
-                     <p><strong>Description:</strong> {{ bug.description }}</p>
+                    <p><strong>Feature Name:</strong> {{ feature.title }} </p>
+                    <p><strong>Created by:</strong> {{ feature.author }} </p>
+                    <p><strong>Created on:</strong> {{ feature.created_date }} </p>
+                    <p><strong>Total Donations:</strong> {{ feature.description }}</p>
+                     <p><strong>Description:</strong> {{ feature.description }}</p>
                 </div>
                 </div>
-                <a href="{% url 'get_bugs' %}" class="btn btn-default">Back to Bugs</a>
-                {% if user == bug.author %}
-                    <a href="{% url 'edit_bug' bug.id %}" class="btn btn-default">Edit Bugs</a>
+                    <a href="{% url 'get_features' %}" class="btn btn-default">Back to features</a>
+                {% if user == feature.author %}
+                    <a href="{% url 'edit_feature' feature.id %}" class="btn btn-default">Edit features</a>
                 {% endif %}
                 
     <div class="row">
@@ -29,7 +28,7 @@
         {% endfor %}
         {% endif %}
     </div>
-        
+       
     <div class="row">
         <form  method="POST">
             {% csrf_token %}
