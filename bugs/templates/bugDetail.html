@@ -12,13 +12,15 @@
                 </div>
                 </div>
                 <a href="{% url 'get_bugs' %}" class="btn btn-default">Back to Bugs</a>
-                <a href="{% url 'edit_bug' bug.id %}" class="btn btn-default">Edit Bugs</a>
+                {% if user == bug.author %}
+                    <a href="{% url 'edit_bug' bug.id %}" class="btn btn-default">Edit Bugs</a>
+                {% endif %}
                 
     <div class="row">
         {% if comments %}
         {% for comment in comments %}
         <div class="row collection commentContainer">
-            <div class="col l4 offset-2 s12">
+            <div class="col">
                 <p>By: {{ comment.author }} ({{ comment.created_date }})</p>
                 <p>Comment</p>
                 <p>{{ comment.comment }}</p>
