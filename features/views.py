@@ -10,6 +10,10 @@ def get_features(request):
     of Features that were display them on the 'features.html' template
     """
     features = Feature.objects.all().order_by('-totalDonation')
+    for feature in features:
+        featureComments = CommentForFeature.objects.filter(feature=feature)
+        feature.comments = featureComments.count()
+        feature.save()
     return render(request, "features.html", {'features': features})
 
 
@@ -30,6 +34,8 @@ def feature_detail(request, pk):
             featureCommentForm.instance.author = user
             featureCommentForm.instance.feature = feature
             featureCommentForm.save()
+            feature.comments = feature.comments + 1
+            feature.save()
             return redirect('feature_detail', pk)
         else:
             featureCommentForm = CommentForFeatureForm()
@@ -39,19 +45,6 @@ def feature_detail(request, pk):
     return render(request, "featureDetail.html", {'feature': feature, 'comments' : featureComments, 'commentForm': featureCommentForm})
 
     
-# def vote_feature(request, pk):
-#     """
-#     A view that returns a single
-#     feature object based on the feature ID (pk) and
-#     render it to the 'featuredetail.html' template.
-#     Or return a 404 error if the feature is
-#     not found
-#     """
-#     feature = get_object_or_404(Feature, pk=pk)
-#     user = request.user
-#     if user in feature.votes.all():
-#         feature.votes.remove(user)
-#     return redirect(get_features)
     
 def create_or_edit_feature(request, pk=None):
     """

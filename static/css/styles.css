@@ -140,3 +140,22 @@ border-color: #eed3d7;
 .commentContainer{
   background-color: #e3e3e3;
 }
+.welcomeName{
+  color: black;
+  font-size: 20px;
+}
+
+.featureBugButton{
+  width: 100%;
+  margin-bottom: 20px;
+}
+.sortWrapper{
+ border-top: 20px; 
+}
+
+@media(min-width:600px){
+   .featureBugButton{
+     width: 100%;
+}
+
+}
