@@ -18,7 +18,7 @@ def add_to_cart(request, id):
 
     request.session['cart'] = cart
     messages.success(request, f'Donation added, ready for checkout')
-    return redirect(reverse('index'))
+    return redirect(reverse('get_features'))
 
 
 def delete_from_cart(request, id):

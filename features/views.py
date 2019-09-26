@@ -9,7 +9,7 @@ def get_features(request):
     A view that will return a list
     of Features that were display them on the 'features.html' template
     """
-    features = Feature.objects.all().order_by('totalDonation')
+    features = Feature.objects.all().order_by('-totalDonation')
     return render(request, "features.html", {'features': features})
 
 

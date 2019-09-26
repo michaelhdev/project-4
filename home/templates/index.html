@@ -3,3 +3,65 @@
 {% block page_title %}Home Page {% endblock %}
 
 {% block page_heading %}Home {% endblock %}
+
+{% block content %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function() {
+
+var bugChart = new CanvasJS.Chart("bugChartContainer", {
+	animationEnabled: true,
+	title: {
+		text: "Bug Satus"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+			{y: 50, label: "Done"},
+			{y: 25, label: " To do"},
+			{y: 25, label: "Inprogress"},
+		]
+	}]
+});
+var featureChart = new CanvasJS.Chart("featureChartContainer", {
+	animationEnabled: true,
+	title: {
+		text: "Feature Satus"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+			{y: 50, label: "Done"},
+			{y: 25, label: " To do"},
+			{y: 25, label: "Inprogress"},
+		]
+	}]
+});
+bugChart.render();
+featureChart.render();
+
+}
+</script>
+</head>
+<body>
+    <div class="row">
+        <div class="col s12 m6">
+            <div id="bugChartContainer" style="height: 300px; width: 100%;"></div>
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        </div>
+        <div class="col s12 m6">
+            <div id="featureChartContainer" style="height: 300px; width: 100%;"></div>
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
