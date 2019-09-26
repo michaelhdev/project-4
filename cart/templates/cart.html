@@ -17,13 +17,21 @@
     {% endfor %}
 </div>
 <div class="row">
-    <div class="col l6 s12">
+    {% if product_count == 0 %}
+     <div class="alert">
+        No items in cart
+    </div>               
 
-                </div>
+    {% else %}
+    
+    
+    <div class="col l6 s12">
+    </div>
     <div class="col l4 offset-l2 s12 total-container">
     <p>Total: <i class="fas fa-euro-sign"></i>{{ total }}</p>
     <a href="{% url 'checkout'%}" class="btn">Checkout</a>
-                </div>
+    </div>
+    {% endif %}
     
 </div>
 

@@ -5,12 +5,15 @@
 {% block page_heading %}Login {% endblock %}
 
 {% block content %}
-
+<div class="row">
+    <div class="col s12 m6 loginForm">
     <form method="POST">
            {% csrf_token %}
           {{login_form}}
           <button type="submit">Login</button>
    </form>
+   </div>
+</div>
 
 {% endblock %}
 
