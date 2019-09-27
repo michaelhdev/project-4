@@ -5,7 +5,11 @@ from django.contrib.auth.models import User
 
 
 class TestViews(TestCase):
-
+    
+    def setUp(self):
+        user = User.objects.create_user(username='testUser30', password='testPassword')
+        self.client.login(username='testUser30', password='testPassword')
+        
     def test_get_bugs(self):
         page = self.client.get("/bugs/")
         self.assertEqual(page.status_code, 200)
@@ -44,6 +48,18 @@ class TestViews(TestCase):
         page = self.client.get("/bugs/5/edit/")
         self.assertEqual(page.status_code, 404)
         
-    
+    def test_vote_bug(self):
+        user = User(username="testUser")
+        user.save()
+        bug = Bug(title="Test Title",description="Test Description",status="progressed",author=user)
+        bug.save()
+        page = self.client.get("/bugs/{0}/votebug/".format(bug.id))
+        bug.refresh_from_db()
+        self.assertEqual(page.status_code, 302)
+        self.assertEqual(bug.votes.count(), 1)
+        page = self.client.get("/bugs/{0}/votebug/".format(bug.id))
+        bug.refresh_from_db()
+        self.assertEqual(page.status_code, 302)
+        self.assertEqual(bug.votes.count(), 0)
     
     
