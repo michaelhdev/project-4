@@ -152,6 +152,11 @@ border-color: #eed3d7;
 .sortWrapper{
  border-top: 20px; 
 }
+.errorlist{
+  color: #b94a48;
+background-color: #f2dede;
+border-color: #eed3d7;
+}
 
 @media(min-width:600px){
    .featureBugButton{
