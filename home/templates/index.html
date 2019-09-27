@@ -48,22 +48,62 @@ featureChart.render();
 }
 </script>
 {% endblock %} {% block content %}
-<div class="headingTitle">Dashboard</div>
+    {% if user.is_authenticated %}
+            <div class="headingTitle">Dashboard</div>
+            {% else %}
+            <div class="signUpContainer">
+  <a href="{% url 'registration' %}" class="btn btn-lg btn--cta btn--red">Sign Up!</a>
+  <p>Sign up today for free! Join our uniattractor community. Community members can log bugs, comment on bugs other community members have entered and vote on bugs they would like to see fixed. Community members can also submit new features they would like
+    to see added to the application. The 3 features with the most donations will be worked on by the developer</p>
+  <h5>What our users say about us</h5>
+  <div class="row">
+  <div class="col s12 m6">
+    <div class="card-panel grey lighten-5 z-depth-1">
+      <div class="row valign-wrapper">
+        <div class="col s4">
+          <img src="/static/img/girl.jpg" alt="" class="circle responsive-img">
+        </div>
+        <div class="col s8">
+          <span class="black-text">
+                I love the uniattractor application and having a way to join the community and add to the development is awesome.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6">
+    <div class="card-panel grey lighten-5 z-depth-1">
+      <div class="row valign-wrapper">
+        <div class="col s4">
+          <img src="/static/img/guy.jpg" alt="" class="circle responsive-img">
+        </div>
+        <div class="col s8">
+          <span class="black-text">
+              The feature I suggested has been developed. It feels great to add to a product that you love.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+            {% endif %}
+
     <div class="row">
         <div class="col s12 m6 collection">
             <div id="bugChartContainer" style="height: 300px; width: 100%;"></div>
             <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
             <div class="collection">
-            	Total Bugs: {{status.total_bugs}}
+            	<strong>Total Bugs:</strong> {{status.total_bugs}}
             </div>
             <div class="collection">
-            	Total Complete Bugs: {{status.bugs_Completed}}
+            	<strong>Total Complete Bugs:</strong> {{status.bugs_Completed}}
             </div>
             <div class="collection">
-            	Total In Progress Bugs: {{status.bugs_inProgress}}
+            	<strong>Total In Progress Bugs:</strong> {{status.bugs_inProgress}}
             </div>
             <div class="collection">
-            	Total Pending Bugs: {{status.bugs_pending}}
+            	<strong>Total Pending Bugs:</strong> {{status.bugs_pending}}
             </div>
             {% if user.is_authenticated %}
             <div class="dashboard-button">
@@ -76,16 +116,16 @@ featureChart.render();
             <div id="featureChartContainer" style="height: 300px; width: 100%;"></div>
             <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
             <div class="collection">
-            	Total Features: {{status.total_features}}
+            	<strong>Total Features:</strong> {{status.total_features}}
             </div>
             <div class="collection">
-            	Total Complete Features: {{status.features_Completed}}
+            	<strong>Total Complete Features:</strong> {{status.features_Completed}}
             </div>
             <div class="collection">
-            	Total In Progress Features: {{status.features_inProgress}}
+            	<strong>Total In Progress Features:</strong> {{status.features_inProgress}}
             </div>
             <div class="collection">
-            	Total Pending Features: {{status.features_pending}}
+            	<strong>Total Pending Features:</strong> {{status.features_pending}}
             </div>
             {% if user.is_authenticated %}
             <div class="dashboard-button">
@@ -94,4 +134,5 @@ featureChart.render();
             {% endif %}
         </div>
     </div>
+
 {% endblock %}

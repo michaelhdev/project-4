@@ -27,6 +27,7 @@
     font-size: 2em;
 }
 
+
 .alert {
 padding: 8px 35px 8px 14px;
 margin-bottom: 18px;
@@ -158,6 +159,32 @@ background-color: #f2dede;
 border-color: #eed3d7;
 }
 
+/* Buttons */
+
+.btn--cta {
+    font-weight: bold;
+    border-radius: 23px;
+    width: 160px;
+}
+
+.btn--red {
+    color: white;
+    background-color: #f05f40;
+    border-color: #f05f40;
+}
+
+.btn--red:hover,
+.btn--red:active,
+.btn--red:focus,
+.btn--red:active:focus {
+    background-color: #df4929;
+    border-color: #df4929;
+    color: white;
+}
+
+.signUpContainer{
+  text-align: center;
+}
 @media(min-width:600px){
    .featureBugButton{
      width: 100%;
