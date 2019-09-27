@@ -10,11 +10,20 @@ def get_features(request):
     of Features that were display them on the 'features.html' template
     """
     features = Feature.objects.all().order_by('-totalDonation')
+    inProgressFeatures = Feature.objects.filter(status='progressed').order_by('-totalDonation')
+    index = 0
+    workingOn = []
+    for feature in inProgressFeatures:
+        
+        if index < 3:
+            workingOn.insert(index,feature.title)
+            index = index + 1
+            
     for feature in features:
         featureComments = CommentForFeature.objects.filter(feature=feature)
         feature.comments = featureComments.count()
         feature.save()
-    return render(request, "features.html", {'features': features})
+    return render(request, "features.html", {'features': features, 'workingOn':workingOn})
 
 
 def feature_detail(request, pk):

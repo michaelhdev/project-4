@@ -36,7 +36,11 @@
     <ul class="collapsible" data-collapsible="accordion">
         {% for feature in features %}
         <li>
-            <div class="collapsible-header">
+            {% if feature.title in workingOn %}
+                <div class="collapsible-header yellow">
+            {%else%}
+                <div class="collapsible-header">
+            {%endif%}
                 <div class="col s2 {{ feature.status }}"> </div>
 
                 <div class="col s9">
@@ -71,6 +75,20 @@
         </li>
         {% endfor %}
     </ul>
+    
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+                    <div class="collapsible-header yellow">
+                        <div class="col s10">Features in yellow are currently being worked on:</div><div class="col s1"><i class="material-icons">expand_more</i></div>
+                    </div>
+                    <div class="collapsible-body">
+                        <p>Highest Donation 50% of time.</p>
+                        <p>Second highest 30% of time.</p>
+                        <p>Third highest 20% of time.</p>
+                    </div>
+            </li>
+           
+        </ul>
 </div>
 
 {% endblock %}
