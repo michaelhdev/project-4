@@ -1,9 +1,12 @@
-{% extends "base.html" %}
-{% block content %}
-    <h1>New Feature</h1>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit" class="btn btn-info">Save</button>
-    </form>
+{% extends "base.html" %} {% block content %}
+<div class="row">
+    <div class="headingTitle">New Feature</div>
+    <div class="collection">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %} {{ form }}
+            <button type="submit" class="btn btn-info">Save</button>
+            <a href="{% url 'get_features' %}" class="btn btn-default">Back to features</a>
+        </form>
+    </div>
+</div>
 {% endblock %}
