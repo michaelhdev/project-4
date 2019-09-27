@@ -44,7 +44,6 @@
                     <div class="col s12 m4"><strong>Bug Name</strong> : {{ bug.title }}</div>
                     <div class="col s12 m4"><strong> Create By </strong> : {{ bug.author }}</div>
                     <div class="col s12 m4"><strong>Votes</strong> : {{ bug.votes.count }}</div>
-                    <!--<strong>Date Added</strong> : {{ bug.created_date }}-->
                 </div>
                 <div class="col s1"> <i class="material-icons">expand_more</i>
                 </div>
@@ -54,9 +53,9 @@
                     <div class="col s12 m2"><a href="{% url 'bug_detail' bug.id %}" class="btn featureBugButton">View details</a></div>
                     <div class="col s12 m8">
                         <p><strong>Date Added</strong> : {{ bug.created_date }}</p>
-                        <p><strong>Description</strong></p>
+                        <p><strong>Description:</strong></p>
                         <p>{{bug.description}}</p>
-                        <p><strong>Comments</strong> ({{ bug.comments }})</p>
+                        <p><i class="material-icons left">comment</i><strong>Comments</strong> ({{ bug.comments }})</p>
                         
                     </div>
                     <div class="col s12 m2">
