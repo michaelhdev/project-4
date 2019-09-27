@@ -38,18 +38,6 @@ def bug_detail(request, pk):
         
     return render(request, "bugDetail.html", {'bug': bug, 'comments' : bugComments, 'commentForm': bugCommentForm})
 
-"""def vote_bug_up(request, pk):
-    
-    A view that returns a single
-    bug object based on the bug ID (pk) and
-    render it to the 'bugdetail.html' template.
-    Or return a 404 error if the bug is
-    not found
-   
-    bug = get_object_or_404(Bug, pk=pk)
-    bug.votes += 1
-    bug.save()
-    return redirect(get_bugs) """
     
 def vote_bug(request, pk):
     """
