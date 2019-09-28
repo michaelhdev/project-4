@@ -6,8 +6,8 @@
                     <p><strong>Bug Name:</strong> {{bug.title }}</p>
                     <p><strong>Created by:</strong> {{ bug.author }} </p>
                     <p><strong>Created on:</strong> {{ bug.created_date }} </p>
-                    <p><strong>Views:</strong> {{bug.views}}</p>
-                    <p><strong>Votes:</strong> {{ bug.votes }}</p>
+                    <p><strong>Status:</strong> {{bug.status}}</p>
+                    <p><strong>Votes:</strong> {{ bug.votes.count }}</p>
                      <p><strong>Description:</strong> {{ bug.description }}</p>
                 </div>
                 </div>
