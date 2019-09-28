@@ -9,7 +9,13 @@ def get_bugs(request):
     A view that will return a list
     of Bugs that were display them on the 'bugs.html' template
     """
-    bugs = Bug.objects.all().order_by('-votes')
+    bugs = Bug.objects.all().order_by('created_date')
+    
+    for bug in bugs:
+        bugComments = CommentForBug.objects.filter(bug=bug)
+        bug.comments = bugComments.count()
+        bug.save()
+        
     return render(request, "bugs.html", {'bugs': bugs})
 
 
@@ -30,6 +36,8 @@ def bug_detail(request, pk):
             bugCommentForm.instance.author = user
             bugCommentForm.instance.bug = bug
             bugCommentForm.save()
+            bug.comments = bug.comments + 1
+            bug.save()
             return redirect('bug_detail', pk)
         else:
             bugCommentForm = CommentForBugForm()
@@ -51,9 +59,10 @@ def vote_bug(request, pk):
     user = request.user
     if user in bug.votes.all():
         bug.votes.remove(user)
+        bug.save()
     else:
         bug.votes.add(user)
-    
+        bug.save()
     return redirect(get_bugs)
     
 def create_or_edit_bug(request, pk=None):
