@@ -187,11 +187,51 @@ Errors encountered when running the test cases have been rectified
 - An email with a link is sent to their email.
 - When they click the link within the email they are taken to the password reset page where they enter their new password.
 
-### A user wants to view current bugs.
+### A user wants to view all current bugs.
 - The user clicks on the view bugs link on the menu bar or on the dashboard page.
-- A list of bugs are display sorted by votes.
+- A list of bugs are display sorted by date created.
 - If a bug is pending it is coloured red, if it is in progress it is coloured orange and if it is complete it is coloured green
 - The bug contains – bug name, create by and votes. When the drop down is selected the date added, description and number of comments are displayed.
+
+### A user wants to view bugs based on a certain criteria.
+- The user clicks on the view bugs link on the menu bar or on the dashboard page, bugs are initially sorted by date.
+- The user selects ‘created by’ and selects the sort button. The bugs are returned sorted by who created them.
+- The user selects ‘status’ and selects the sort button. The bugs are returned sorted by status.
+- The user selects ‘date’ and selects the sort button. The bugs are returned sorted by date.
+
+### A user wants to add a bug to the system.
+- The user clicks on the add bug button on the bugs page.
+- The New bug page is displayed
+- The user enters a title and description and clicks save
+- The user is returned to the bug details page where they can see the information they have entered. There is an option to edit the bug if they are not happy with what they have entered.
+- If no title or description is entered an error message is displayed
+
+### A user wants to edit a bug that they have entered.
+-  On the bugs list page the user clicks the bug the have created and would like to edit.
+- The user clicks on the view details button and the bug details page opens.
+- If the user has created the bug the edit bug button will display on the bug details page.
+- The user clicks on the edit bug button
+- The user edits the title or description and clicks save
+- The user is returned to the bug details page where they can see the information they have entered. There is an option to edit the bug again if they are not happy with what they have entered.
+- If no title or description is entered an error message is displayed
+
+
+### A user wants to vote on a bug
+- On the bugs list page the user clicks the bug they would like to vote for.
+- The user clicks on the vote up button.
+- There vote is added to the system and displayed in the bug details section
+- The user does not have the option to vote for the same bug twice
+
+
+### A user wants to cancel their vote
+- On the bugs list page the user clicks the bug they would like to cancel their vote.
+- The user clicks on the cancel vote button.
+- There vote is cancelled and the new vote total is displayed in the bug details section
+
+### A user wants to comment on a bug
+-  On the bugs list page the user clicks the bug they would like to comment on.
+- The user clicks on the view details button and the bug details page opens.
+- The user enters a comment in the comment field and clicks the comment button.
 
 
 ## Issues
