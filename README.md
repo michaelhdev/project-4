@@ -232,7 +232,70 @@ Errors encountered when running the test cases have been rectified
 -  On the bugs list page the user clicks the bug they would like to comment on.
 - The user clicks on the view details button and the bug details page opens.
 - The user enters a comment in the comment field and clicks the comment button.
+- The comment is displayed alone with the user who entered it and the date.
+- If the comment button is clicked with no comment an error message is displayed.
 
+### A user wants to view all current features
+- The user clicks on the view features link on the menu bar or on the dashboard page.
+- A list of features are display sorted by date created.
+- If a feature is pending it is coloured red, if it is in progress it is coloured orange and if it is complete it is coloured green
+- The feature contains – feature name, create by and total donations. When the drop down is selected the date added, description and number of comments are displayed.
+- The top 3 features with the highest donation and status set to in progress are highlighted in yellow to show the user the features being currently worked on.
+
+### A user wants to view features based on a certain criteria 
+- The user clicks on the view features link on the menu bar or on the dashboard page, features are initially sorted by date.
+- The user selects ‘created by’ and selects the sort button. The features are returned sorted by who created them.
+- The user selects ‘status’ and selects the sort button. The features are returned sorted by status.
+- The user selects ‘date’ and selects the sort button. The features are returned sorted by date.
+- The user selects ‘donations’ and selects the sort button. The features are returned sorted by total donations.
+
+
+### A user wants to add a feature to the system 
+- The user clicks on the add feature button on the features page.
+- The New feature page is displayed
+- The user enters a title and description and clicks save
+- The user is returned to the features details page where they can see the information they have entered. There is an option to edit the feature if they are not happy with what they have entered.
+- If no title or description is entered an error message is displayed
+
+### A user wants to edit a feature that they have entered.
+-  On the features list page the user clicks the feature they have created and would like to edit.
+- The user clicks on the view details button and the feature details page opens.
+- If the user has created the feature the edit feature button will display on the feature details page.
+- The user clicks on the edit feature button
+- The user edits the title or description and clicks save
+- The user is returned to the feature details page where they can see the information they have entered. There is an option to edit the feature again if they are not happy with what they have entered.
+- If no title or description is entered an error message is displayed
+
+
+### A user wants to donate to have a feature developed 
+- On the features list page the user clicks the feature they would like to donate for.
+- The user enters the amount they would like to donate and clicks the donate button.
+- The amount the entered is added to the cart
+
+### A user wants to checkout and pay for his/her donations 
+- The user clicks on the cart button icon on the menu bar.
+- The cart page opens displaying the items in the cart and the total cost
+- The user clicks on the checkout button the checkout page is displayed
+- The user enters address and payment details
+- If the details are correct the user is returned to the feature list page with a success message displayed. The feature donation total has been updated.
+- If incorrect address or payment details are entered an error message is displayed on the cart page.
+
+### A user wants to delete items from his/her basket 
+- The user clicks on the cart button icon on the menu bar.
+- The cart page opens displaying the items in the cart and the total cost
+- The user clicks the delete icon beside the item they want deleted
+- The item is deleted and the total in the cart is updated
+
+### A user wants to comment on a feature 
+-  On the features list page the user clicks the feature they would like to comment on.
+- The user clicks on the view details button and the feature details page opens.
+- The user enters a comment in the comment field and clicks the comment button.
+- The comment is displayed alone with the user who entered it and the date.
+- If the comment button is clicked with no comment an error message is displayed.
+
+### A user wants to log out 
+- The user clicks the log out button on the menu bar. 
+- The user is logged out and returned to the landing page with a successfully logged out message.
 
 ## Issues
 - Give less space for votes – bugs/features with large names are extending their container. 
