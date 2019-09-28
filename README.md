@@ -166,3 +166,36 @@ Errors encountered when running the test cases have been rectified
 ## Use Cases and expected results
 
 ### Guest tests
+### A guest wants to register as a user
+- The guest selects the sign up button on the landing page
+- The guest is taken to the register page where he/she enters email, username, password and re-enter password. 
+- If correct and unique details are entered the user is registered on the system and they are taken to the dashboard page. A success message is displayed 
+- If the incorrect details are entered they remain on register page and an error message is displayed.
+
+### User tests
+### A user wants to login
+- The user selects the login link on the menu bar
+- The user is taken to a login page where they can enter login details. 
+- If the correct login details are entered they are taken to the site dashboard page. 
+- If the incorrect login details are entered they remain on the login page and an error message is displayed.
+
+### A user forget his/her login detail
+- The user selects the login link on the menu bar
+- The user is taken to a login page.
+- The user clicks on the ‘Forgot password’ link.
+- The user is taken to the reset password page where they enter their email address and click the reset password button. 
+- An email with a link is sent to their email.
+- When they click the link within the email they are taken to the password reset page where they enter their new password.
+
+### A user wants to view current bugs.
+- The user clicks on the view bugs link on the menu bar or on the dashboard page.
+- A list of bugs are display sorted by votes.
+- If a bug is pending it is coloured red, if it is in progress it is coloured orange and if it is complete it is coloured green
+- The bug contains – bug name, create by and votes. When the drop down is selected the date added, description and number of comments are displayed.
+
+
+## Issues
+- Give less space for votes – bugs/features with large names are extending their container. 
+- Bugs don’t appear to be displaying votes in descending order initially, they appear to be assending 
+- The percentages on the graph are not appearing correctly
+
