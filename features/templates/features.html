@@ -75,7 +75,7 @@
         </li>
         {% endfor %}
     </ul>
-    
+     {% if workingOn|length %}
         <ul class="collapsible" data-collapsible="accordion">
             <li>
                     <div class="collapsible-header yellow">
@@ -89,6 +89,7 @@
             </li>
            
         </ul>
+    {% endif%}
 </div>
 
 {% endblock %}
