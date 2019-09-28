@@ -73,6 +73,7 @@ User Stories
 
 - The admin wants to login and manage feature/bug status and moderate the site -> The admin writes the address to the admin login in the browser. The admin logs into the Django admin interface and from their he/she is able to moderate all the data within the system.
 
+
 Wire Frame Diagrams
 ----------
 
@@ -96,3 +97,72 @@ Below are a list of apps added to the project to provide the website functionali
 -   Cart – This app contains all the views, models and forms to manage add items to the cart within the website. [Cart App]( https://github.com/michaelhdev/project-4/tree/master/cart)
 
 -   Checkout – This app contains all the views, models and forms to manage payment and stripe details. [Checkout App]( https://github.com/michaelhdev/project-4/tree/master/checkout)
+
+
+Interface
+===============
+## View
+
+<p align="center"><img src="static/img "/></p>
+
+Future Features
+===============
+
+If the scope of the project was to be extended the following features should be added:
+
+1.  Live Search – live search to allow a user check if a bug or feature already exist within the website.
+
+Database Schemas
+================
+
+This project consists of a number of tables. The schema for each is shown below:
+
+<p align="center"><img src="static/img"/></p>
+
+Technologies Used
+=================
+
+The technologies used for this project are listed below in no particualr order.
+
+1. HTML5
+
+2. CSS
+
+3. [Materialize front-end framework v0.100.2](http://archives.materializecss.com/0.100.2/)
+
+4.  [Python](https://www.python.org/downloads/) v3.6.8
+
+5.  [Django]( https://www.djangoproject.com/) v1.11
+
+6.  Pip3
+
+7.  [Sqlite](https://www.sqlite.org/index.html) Used for development
+
+8.  [Postgresql](https://www.postgresql.org/) Used for deployment
+
+9. [Heroku](https://www.heroku.com/)
+
+10. [Travis]( https://travis-ci.org/)
+
+11. [Google fonts](https://fonts.google.com/)
+
+12. Chrome developer tools
+
+13. [Git/Github](https://github.com/michaelhdev/project-4)
+
+14. AWS Cloud9
+
+## Testing
+The application was tested constantly as it was being developed. Debugging was enabled during developement and any issues or bugs were fixed.
+
+Each app was tested using tests written in the Django test framework. This ensured all functions were acting as expected
+
+Travis was used to ensure the project was building correctly
+[Travis] (https://travis-ci.org/michaelhdev/project-4)
+
+Test cases to ensure the application was functioning as expected were derived from the user stories. Below is the list of these test cases along with the expected results.
+Errors encountered when running the test cases have been rectified
+
+## Use Cases and expected results
+
+### Guest tests
