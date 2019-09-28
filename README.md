@@ -73,3 +73,26 @@ User Stories
 
 - The admin wants to login and manage feature/bug status and moderate the site -> The admin writes the address to the admin login in the browser. The admin logs into the Django admin interface and from their he/she is able to moderate all the data within the system.
 
+Wire Frame Diagrams
+----------
+
+<p align="center"><img src="static/img"/></p>
+<p align="center"><img src="static/img/"/></p>
+<p align="center"><img src="static/img/"/></p>
+<p align="center"><img src="static/img/"/></p>
+
+## Features
+
+Below are a list of apps added to the project to provide the website functionality.
+
+-   Users – This app contains all the views, models and forms to manage user login and authentication. [Users App]( https://github.com/michaelhdev/project-4/tree/master/users)
+ 
+-   Home – This app contains the views to display the landing page of the website [Home App]( https://github.com/michaelhdev/project-4/tree/master/home)
+
+-   Bugs – This app contains all the views, models and forms to manage bugs within the system [Bugs App]( https://github.com/michaelhdev/project-4/tree/master/bugs)
+
+-   Features – This app contains all the views, models and forms to manage features within the system. [Feature App]( https://github.com/michaelhdev/project-4/tree/master/features)
+
+-   Cart – This app contains all the views, models and forms to manage add items to the cart within the website. [Cart App]( https://github.com/michaelhdev/project-4/tree/master/cart)
+
+-   Checkout – This app contains all the views, models and forms to manage payment and stripe details. [Checkout App]( https://github.com/michaelhdev/project-4/tree/master/checkout)
