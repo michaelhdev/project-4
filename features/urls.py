@@ -1,6 +1,8 @@
 from django.conf.urls import url
 from .views import get_features, feature_detail, create_or_edit_feature, sort_features
 
+"""Urls for the features app """
+
 urlpatterns = [
     url(r'^$', get_features, name='get_features'),
     url(r'^(?P<pk>\d+)/$', feature_detail, name='feature_detail'),

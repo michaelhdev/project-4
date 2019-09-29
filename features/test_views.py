@@ -3,6 +3,7 @@ from .models import Feature, CommentForFeature
 from django.contrib import auth
 from django.contrib.auth.models import User
 
+"""View tests for the features app """
 
 class TestViews(TestCase):
     def setUp(self):

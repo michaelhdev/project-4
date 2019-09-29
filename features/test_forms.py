@@ -1,6 +1,8 @@
 from django.test import TestCase
 from .forms import FeatureForm, CommentForFeatureForm
 
+"""Form tests for the features app """
+
 class TestFeatureForm(TestCase):
     
     def test_cant_create_feature_with_no_info(self):

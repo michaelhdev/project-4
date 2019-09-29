@@ -1,6 +1,7 @@
 from django import forms
 from .models import Feature, CommentForFeature
 
+"""Form declarations for the features app """
 
 class FeatureForm(forms.ModelForm):
 

@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from bugs.models import CommentForBug
 
+"""Model/database declarations for the features app """
 
 class Feature(models.Model):
     """

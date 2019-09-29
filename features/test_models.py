@@ -2,6 +2,7 @@ from django.test import TestCase
 from .models import Feature, CommentForFeature
 from django.contrib.auth.models import User
 
+"""Model tests for the features app """
 
 class TestFeatureModel(TestCase):
 
