@@ -2,8 +2,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Feature, CommentForFeature
 from .forms import FeatureForm, CommentForFeatureForm
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def get_features(request):
     """
     A view that will return a list
@@ -25,7 +26,7 @@ def get_features(request):
         feature.save()
     return render(request, "features.html", {'features': features, 'workingOn':workingOn})
 
-
+@login_required
 def feature_detail(request, pk):
     """
     A view that returns a single
@@ -54,7 +55,7 @@ def feature_detail(request, pk):
     return render(request, "featureDetail.html", {'feature': feature, 'comments' : featureComments, 'commentForm': featureCommentForm})
 
     
-    
+@login_required
 def create_or_edit_feature(request, pk=None):
     """
     A view that allows us to create
@@ -72,7 +73,8 @@ def create_or_edit_feature(request, pk=None):
     else:
         form = FeatureForm(instance=feature)
     return render(request, 'featureForm.html', {'form': form})
-    
+
+@login_required
 def sort_features(request):
     
     selection = request.GET['sort_by']
