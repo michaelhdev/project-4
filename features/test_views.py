@@ -5,7 +5,10 @@ from django.contrib.auth.models import User
 
 
 class TestViews(TestCase):
-
+    def setUp(self):
+        user = User.objects.create_user(username='testUser30', password='testPassword')
+        self.client.login(username='testUser30', password='testPassword')
+        
     def test_get_features(self):
         page = self.client.get("/features/")
         self.assertEqual(page.status_code, 200)
