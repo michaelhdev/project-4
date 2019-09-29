@@ -36,12 +36,6 @@ def login(request):
     return render(request, 'login.html', {'login_form': login_form})
     
 
-def user_account(request):
-    """The user's account page"""
-    user = User.objects.get(email=request.user.email)
-    return render(request, 'userAccount.html', {"account": user})
-
-
 def registration(request):
     """Render the registration page"""
     if request.user.is_authenticated:

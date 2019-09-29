@@ -6,6 +6,5 @@ urlpatterns = [
     url('logout/', logout, name="logout"),
     url('login/', login, name="login"),
     url('register/', registration, name="registration"),
-    url('account/', user_account, name="account"),
     url(r'^password-reset/', include(url_reset))
 ]
