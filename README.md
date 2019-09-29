@@ -12,13 +12,13 @@ Login Details
 
 Project aim:
 ----------
-The Uniattractor website is an online community for those who use the Uniattractor web app. The website will provide a place for users to log bugs that they find using the Uniattractor web app. These bugs can be voted on by other users. This will help the admin to priorities bug fixes, which he/she will fix for free. Users can also comment on bugs to provide fixes and note similar issues.
+The Uniattractor website is an online community for those who use the Uniattractor web app. The website will provide a place for users to log bugs that they find using the Uniattractor web app. These bugs can be voted on by other users. This will help the admin to priorities bug fixes, which he/she will fix for free. Users can also comment on bugs, to provide fixes and note similar issues.
 
 The website will also provide a way for users to submit feature ideas. If other users like the feature they have the facility to donate money to have that feature developed. The admin will then be able to priorities which features he/she will develop. The admin will dedicate 50% of his/her time to the feature with the highest donation. 30% of his/her time to the feature with the second highest donation and 20% of his/her time to the feature with the third highest donation. Users will also be able to comment on features that are being developed.
 
 The website will provide a way that users can clearly view bugs and features. It will be clearly visible what the current status of a bug or feature is and what features have the highest donations and that the admin is working on.
 
-The website will have sublime UI aimed at attracting new users. 
+The website will have an excellent UI aimed at attracting new users. 
 
 ## UX
 
@@ -39,11 +39,11 @@ User Stories
 
 - A user wants to login -> The user clicks the login button on the landing page. The user is taken to a login page where they can login. If the correct login details are entered they are taken to the user dashboard. If the incorrect details are entered they are displayed with an error message on the login page.
 
-- A user forget his/her login detail -> The user clicks on the forgot password on the login page. The user enters his/her email address and click ‘reset’. An email with a link to reset details is sent to the users email address.
+- A user forgets his/her login details -> The user clicks on the forgot password on the login page. The user enters his/her email address and clicks ‘reset’. An email with a link to reset his/her details is sent to the users email address.
 
 - A user wants to view current bugs -> The user selects the view bugs link on the dashboard page or menu bar. The website displays all the current bugs on the system order initially by votes. The bugs clearly display their current status, name, description and number of votes they have.
 
-- A user wants to view bugs based on a certain criteria -> On the bug list page the user can sort by: votes, status, created by.
+- A user wants to view bugs based on a certain criteria -> On the bug list page the user can sort by: date, status and created by.
 
 - A user wants to add a bug to the system -> The user clicks on the add bug button on the bug list page. The add bug page is displayed. The user enters the bug name and description and clicks add. The bug is added to the system and the user is returned to the bug list page. If incorrect details are entered an error is returned.
 
@@ -53,7 +53,7 @@ User Stories
 
 - A user wants to comment on a bug -> The user selects the bug they want to comment on. They select the view bug button. The bug details page is display. The user enters their comment in the comment box and presses the comment button. There comment is added to the page along with their name and the date. If the user presses the comment button without entering a comment and error is displayed.
 
-- A user wants to view current features -> The user selects the view features link on the dashboard page or menu bar. The website displays all the current features on the system order initially by donations. The features clearly display their current status, name, description and total donations they have. It is clear the 3 features the admin is currently working on.
+- A user wants to view current features -> The user selects the view features link on the dashboard page or menu bar. The website displays all the current features on the system order initially by donations. The features clearly display their current status, name, description and total donations. It is clear the 3 features the admin is currently working on.
 
 - A user wants to view features based on a certain criteria -> On the feature list page the user can sort by: donations, status, created by.
 
@@ -61,17 +61,17 @@ User Stories
 
 - A user wants to donate to have a feature developed -> The user selects the feature they want to donate to. They enter the amount of money they want to donate and click the donate button. A message is displayed saying their donation has been added to the cart. The user can donate to other features or checkout. 
 
-- A user wants to checkout and pay for his/her donations -> The user clicks on the cart link in the menu bar. The user is taken to the cart page where everything in their cart is displayed along with the total cost. The user clicks the checkout button. The user is take to the payment page where the items are displayed again along with an address and payment form. The user enters his/her payment details and click pay. If the payment is successful they are returned to the feature list page with a success message. Their added donation is displayed on the feature. If incorrect details were entered and error is displayed
+- A user wants to checkout and pay for his/her donations -> The user clicks on the cart link in the menu bar. The user is taken to the cart page where everything in their cart is displayed along with the total cost. The user clicks the checkout button. The user is taken to the payment page where the items are displayed again along with an address and payment form. The user enters his/her payment details and clicks pay. If the payment is successful they are returned to the feature list page with a success message. Their added donation is displayed on the feature. If incorrect details were entered an error is displayed
 
 - A user wants to delete items from his/her basket -> The user clicks on the cart link in the menu bar. The user is taken to the cart page where everything in their cart is displayed along with the total cost. The user clicks on the delete icon beside the item they want to delete. That item is removed and the new total is displayed.
 
 - A user wants to comment on a feature -> The user selects the feature they want to comment on. They select the view feature button. The feature details page is display. The user enters their comment in the comment box and presses the comment button. There comment is added to the page along with their name and the date. If the user presses the comment button without entering a comment and error is displayed.
 
-- A user wants to log out -> The user clicks the logout link in the menu bar. They are return to the landing page with a log out message displayed
+- A user wants to log out -> The user clicks the logout link in the menu bar. They are returneds to the landing page with a log out message displayed
 
 ### Admin
 
-- The admin wants to login and manage feature/bug status and moderate the site -> The admin writes the address to the admin login in the browser. The admin logs into the Django admin interface and from their he/she is able to moderate all the data within the system.
+- The admin wants to login and manage feature/bug status and moderate the site -> The admin writes the address to the admin login in the browser. The admin logs into the Django admin interface and from their he/she is able to moderate all the data within the site.
 
 
 Wire Frame Diagrams
@@ -94,7 +94,7 @@ Below are a list of apps added to the project to provide the website functionali
 
 -   Features – This app contains all the views, models and forms to manage features within the system. [Feature App]( https://github.com/michaelhdev/project-4/tree/master/features)
 
--   Cart – This app contains all the views, models and forms to manage add items to the cart within the website. [Cart App]( https://github.com/michaelhdev/project-4/tree/master/cart)
+-   Cart – This app contains all the views, models and forms to add items to the cart within the website. [Cart App]( https://github.com/michaelhdev/project-4/tree/master/cart)
 
 -   Checkout – This app contains all the views, models and forms to manage payment and stripe details. [Checkout App]( https://github.com/michaelhdev/project-4/tree/master/checkout)
 
@@ -102,18 +102,31 @@ Below are a list of apps added to the project to provide the website functionali
 Interface
 ===============
 ## Call to action page
+
 <p align="center"><img src="static/img/interface1.jpg "/></p>
+
 ## Account Pages
+
 <p align="center"><img src="static/img/interface2.jpg "/></p>
+
 ## Dashboard Page
+
 <p align="center"><img src="static/img/interface3.jpg "/></p>
+
 ## Logged in menu
+
 <p align="center"><img src="static/img/interface4.jpg "/></p>
+
 ## Bug Pages
+
 <p align="center"><img src="static/img/interface5.jpg "/></p>
+
 ## Feature Pages
+
 <p align="center"><img src="static/img/interface6.jpg "/></p>
+
 ## Cart and Checkout page
+
 <p align="center"><img src="static/img/interface7.jpg "/></p>
 
 Future Features
@@ -191,7 +204,7 @@ Errors encountered when running the test cases have been rectified
 - The guest selects the sign up button on the landing page
 - The guest is taken to the register page where he/she enters email, username, password and re-enter password. 
 - If correct and unique details are entered the user is registered on the system and they are taken to the dashboard page. A success message is displayed 
-- If the incorrect details are entered they remain on register page and an error message is displayed.
+- If the incorrect details are entered they remain on the register page and an error message is displayed.
 
 ### User tests
 ### A user wants to login
@@ -200,7 +213,7 @@ Errors encountered when running the test cases have been rectified
 - If the correct login details are entered they are taken to the site dashboard page. 
 - If the incorrect login details are entered they remain on the login page and an error message is displayed.
 
-### A user forget his/her login detail
+### A user forgets his/her login details
 - The user selects the login link on the menu bar
 - The user is taken to a login page.
 - The user clicks on the ‘Forgot password’ link.
@@ -258,13 +271,13 @@ Errors encountered when running the test cases have been rectified
 
 ### A user wants to view all current features
 - The user clicks on the view features link on the menu bar or on the dashboard page.
-- A list of features are display sorted by date created.
+- A list of features are display sorted by total donations.
 - If a feature is pending it is coloured red, if it is in progress it is coloured orange and if it is complete it is coloured green
 - The feature contains – feature name, create by and total donations. When the drop down is selected the date added, description and number of comments are displayed.
 - The top 3 features with the highest donation and status set to in progress are highlighted in yellow to show the user the features being currently worked on.
 
 ### A user wants to view features based on a certain criteria 
-- The user clicks on the view features link on the menu bar or on the dashboard page, features are initially sorted by date.
+- The user clicks on the view features link on the menu bar or on the dashboard page, features are initially sorted by total donation.
 - The user selects ‘created by’ and selects the sort button. The features are returned sorted by who created them.
 - The user selects ‘status’ and selects the sort button. The features are returned sorted by status.
 - The user selects ‘date’ and selects the sort button. The features are returned sorted by date.
@@ -326,8 +339,10 @@ Errors encountered when running the test cases have been rectified
 ## Issues
 - Give less space for votes – bugs/features with large names are extending their container. PASS
 - The percentages on the graph are not appearing correctly PASS
-- When sorting features by donations, the are returned assending it would be better decending PASS
+- When sorting features by donations, they are returned assending it would be better decending PASS
 - You can force browse to sections of the site when you are not logged in PASS
+- Error messages on the card payment form are not display on checkout. FAIL - Jquery issue
+- Button names were displaying Edit features and Edit Bugs, these should be singular PASS
 
 ## Responsiveness Testing
 The responsiveness was tested extensively on different devises using Chromes developement tools.
@@ -344,7 +359,7 @@ Git was used extensively to back up project files from Cloud 9
 
 The project is deployed using [Heroku](https://id.heroku.com/login) 
 
-The Sqlite database was used during developement process and the postgresql database was used on Heroku for deployment. The settings for both were save in an env.py file on Cloud 9 which allowed for seemless integration.
+The Sqlite database was used during the developement process and the postgresql database was used on Heroku for deployment. The settings for both were save in an env.py file on Cloud 9 which allowed for seemless integration.
 
 A "Uniattractor" app was created on Heroku and this was synced with my git project. So anytime I pushed my changes to git, they were also deployed and built on Heroku
 
@@ -354,9 +369,9 @@ The requirements file is displayed below.
 
 <p align="center"><img src="static/img/requirements.jpg"/></p>
 
-The project was deployed to Heroku at and early stage in the developemnt process and having been integrated with Git meant there were never any issues deploying.
+The project was deployed to Heroku at an early stage in the developemnt process and having been integrated with Git meant there were never any issues deploying.
 
-The postgresql, email servers and stripe secret keys were add as environment variables in Heroku.
+The postgresql, email servers and stripe secret keys were added as environment variables in Heroku.
 
 <p align="center"><img src="static/img/envs.jpg"/></p>
 

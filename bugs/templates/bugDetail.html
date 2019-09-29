@@ -13,7 +13,7 @@
                 </div>
                 <a href="{% url 'get_bugs' %}" class="btn btn-default">Back to Bugs</a>
                 {% if user == bug.author %}
-                    <a href="{% url 'edit_bug' bug.id %}" class="btn btn-default">Edit Bugs</a>
+                    <a href="{% url 'edit_bug' bug.id %}" class="btn btn-default">Edit Bug</a>
                 {% endif %}
                 
     <div class="row">
