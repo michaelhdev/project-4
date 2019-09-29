@@ -103,7 +103,13 @@ Interface
 ===============
 ## View
 
-<p align="center"><img src="static/img "/></p>
+<p align="center"><img src="static/img/interface1.jpg "/></p>
+<p align="center"><img src="static/img/interface2.jpg "/></p>
+<p align="center"><img src="static/img/interface3.jpg "/></p>
+<p align="center"><img src="static/img/interface4.jpg "/></p>
+<p align="center"><img src="static/img/interface5.jpg "/></p>
+<p align="center"><img src="static/img/interface6.jpg "/></p>
+<p align="center"><img src="static/img/interface7.jpg "/></p>
 
 Future Features
 ===============
@@ -111,6 +117,7 @@ Future Features
 If the scope of the project was to be extended the following features should be added:
 
 1.  Live Search – live search to allow a user check if a bug or feature already exist within the website.
+2.  Add a user profile page so that other users can find out infomation about a user
 
 Database Schemas
 ================
