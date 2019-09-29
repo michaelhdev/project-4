@@ -101,14 +101,19 @@ Below are a list of apps added to the project to provide the website functionali
 
 Interface
 ===============
-## View
-
+## Call to action page
 <p align="center"><img src="static/img/interface1.jpg "/></p>
+## Account Pages
 <p align="center"><img src="static/img/interface2.jpg "/></p>
+## Dashboard Page
 <p align="center"><img src="static/img/interface3.jpg "/></p>
+## Logged in menu
 <p align="center"><img src="static/img/interface4.jpg "/></p>
+## Bug Pages
 <p align="center"><img src="static/img/interface5.jpg "/></p>
+## Feature Pages
 <p align="center"><img src="static/img/interface6.jpg "/></p>
+## Cart and Checkout page
 <p align="center"><img src="static/img/interface7.jpg "/></p>
 
 Future Features
@@ -166,8 +171,11 @@ The application was tested constantly as it was being developed. Debugging was e
 
 Each app was tested using tests written in the Django test framework. This ensured all functions were acting as expected
 
+<p align="center"><img src="static/img/tests.jpg"/></p>
+
 Travis was used to ensure the project was building correctly
-[Travis] (https://travis-ci.org/michaelhdev/project-4)
+
+ [Travis](https://travis-ci.org/michaelhdev/project-4)
 
 Test cases to ensure the application was functioning as expected were derived from the user stories. Below is the list of these test cases along with the expected results.
 Errors encountered when running the test cases have been rectified
@@ -315,4 +323,41 @@ Errors encountered when running the test cases have been rectified
 - Give less space for votes – bugs/features with large names are extending their container. 
 - Bugs don’t appear to be displaying votes in descending order initially, they appear to be assending 
 - The percentages on the graph are not appearing correctly
+
+## Responsiveness Testing
+The responsiveness was tested extensively on different devises using Chromes developement tools.
+
+
+## Deployment
+
+The project was developed and tested in Cloud9.
+
+Git was used extensively to back up project files from Cloud 9
+
+The project is deployed using [Heroku](https://id.heroku.com/login) 
+
+The Sqlite database was used during developement process and the postgresql database was used on Heroku for deployment. The settings for both were save in an env.py file on Cloud 9 which allowed for seemless integration.
+
+A "Uniattractor" app was created on Heroku and this was synced with my git project. So anytime I pushed my changes to git, they were also deployed and built on Heroku
+
+A procfile and a requirements file were added to the project - this enabled Heroku to know where to run the application from and to know what requirements the project needed to run.
+
+The requirements file is displayed below.
+
+<p align="center"><img src="static/img/requirements.jpg"/></p>
+
+The project was deployed to Heroku at and early stage in the developemnt process and having been integrated with meant there were never any issues deploying.
+
+The postgresql, email servers and stripe secret keys were add as environment variables in Heroku.
+
+<p align="center"><img src="static/img/envs.jpg"/></p>
+
+
+## Credits
+
+### Acknowledgements
+
+- I received guidance from projects presented during the code institute course. 
+
+
 
