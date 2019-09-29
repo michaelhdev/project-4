@@ -4,16 +4,18 @@ from django.contrib.auth.decorators import login_required
 from users.forms import UserLoginForm, UserRegistrationForm
 from django.contrib.auth.models import User
 
-# Create your views here.
+
 @login_required
 def logout(request):
-    """Log the user out"""
+    """Log the user out and return to the landing page"""
+    
     auth.logout(request)
     messages.success(request, "You have successfully been logged out!")
     return redirect(reverse('index'))
     
 def login(request):
-    """Return login page"""
+    """Checks login details and logs the user in"""
+    
     if request.user.is_authenticated:
         return redirect(reverse('index'))
     
@@ -37,7 +39,8 @@ def login(request):
     
 
 def registration(request):
-    """Render the registration page"""
+    """Renders the registration page"""
+    
     if request.user.is_authenticated:
         return redirect(reverse('index'))
 

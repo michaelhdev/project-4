@@ -1,6 +1,8 @@
 from django.test import TestCase
 from .forms import UserLoginForm, UserRegistrationForm
 
+"""Form tests for the users app"""
+
 class TestUserLoginForm(TestCase):
     
     def test_can_login_with_just_username(self):

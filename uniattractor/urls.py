@@ -22,6 +22,7 @@ from cart import urls as cart_urls
 from features import urls as feature_urls
 from checkout import urls as checkout_urls
 
+"""Main url mappings for the uniattractor app"""
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

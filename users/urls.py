@@ -2,6 +2,8 @@ from django.conf.urls import url, include
 from users.views import logout, login, registration
 from users import url_reset
 
+"""Urls for the users app"""
+
 urlpatterns = [
     url('logout/', logout, name="logout"),
     url('login/', login, name="login"),

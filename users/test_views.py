@@ -1,5 +1,6 @@
 from django.test import TestCase
 
+"""View tests for the users app"""
 
 class TestUserViews(TestCase):
       

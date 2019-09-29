@@ -168,6 +168,8 @@ The technologies used for this project are listed below in no particualr order.
 
 15. AWS Cloud9
 
+16. [Stripe](https://stripe.com)
+
 ## Testing
 The application was tested constantly as it was being developed. Debugging was enabled during developement and any issues or bugs were fixed.
 
