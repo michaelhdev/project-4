@@ -117,7 +117,9 @@ Database Schemas
 
 This project consists of a number of tables. The schema for each is shown below:
 
-<p align="center"><img src="static/img"/></p>
+<p align="center"><img src="static/img/bugDig.jpg"/></p>
+<p align="center"><img src="static/img/featureDig.jpg"/></p>
+<p align="center"><img src="static/img/orderDig.jpg"/></p>
 
 Technologies Used
 =================
@@ -296,6 +298,11 @@ Errors encountered when running the test cases have been rectified
 ### A user wants to log out 
 - The user clicks the log out button on the menu bar. 
 - The user is logged out and returned to the landing page with a successfully logged out message.
+
+### Admin tests
+- The admin logs in and goes to the django admin panel
+- The admin changes the status of bugs and features.
+- The status changes on the website.
 
 ## Issues
 - Give less space for votes – bugs/features with large names are extending their container. 
