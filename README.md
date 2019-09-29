@@ -6,8 +6,8 @@
 # [Live Website](https://uniattractor.herokuapp.com/)
 -------------
 Login Details
-- User privileges = user1
-- Admin privileges = admin
+- User privileges : username = user1 / password = user1
+- Admin privileges : username = admin / password = 1qw2as3zx
 -----------
 
 Project aim:
@@ -322,10 +322,10 @@ Errors encountered when running the test cases have been rectified
 - The status changes on the website.
 
 ## Issues
-- Give less space for votes – bugs/features with large names are extending their container. 
-- The percentages on the graph are not appearing correctly
-- When sorting features by donations, the are returned assending it would be better decending
-- You can force browse to sections of the site when you are not logged in
+- Give less space for votes – bugs/features with large names are extending their container. PASS
+- The percentages on the graph are not appearing correctly PASS
+- When sorting features by donations, the are returned assending it would be better decending PASS
+- You can force browse to sections of the site when you are not logged in PASS
 
 ## Responsiveness Testing
 The responsiveness was tested extensively on different devises using Chromes developement tools.
