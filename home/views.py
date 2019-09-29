@@ -4,9 +4,8 @@ from bugs.models import Bug
 from features.models import Feature
 
 
-# Create your views here.
 def get_homepage(request):
-    """Return the index.html file"""
+    """This view gets the data needed to render the index.html page"""
     
     bugs_pending = Bug.objects.filter(status='pending').count() 
     bugs_inProgress = Bug.objects.filter(status='progressed').count()
