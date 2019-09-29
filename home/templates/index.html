@@ -16,7 +16,6 @@ var bugChart = new CanvasJS.Chart("bugChartContainer", {
 	data: [{
 		type: "pie",
 		startAngle: 240,
-		yValueFormatString: "##0.00\"%\"",
 		indexLabel: "{label}",
 		dataPoints: [
 			{y: "{{status.bugs_Completed}}", label: "Completed"},
@@ -33,7 +32,6 @@ var featureChart = new CanvasJS.Chart("featureChartContainer", {
 	data: [{
 		type: "pie",
 		startAngle: 240,
-		yValueFormatString: "##0.00\"%\"",
 		indexLabel: "{label}",
 		dataPoints: [
 			{y: "{{status.features_Completed}}", label: "Completed"},
