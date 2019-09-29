@@ -341,7 +341,7 @@ Errors encountered when running the test cases have been rectified
 - The percentages on the graph are not appearing correctly PASS
 - When sorting features by donations, they are returned assending it would be better decending PASS
 - You can force browse to sections of the site when you are not logged in PASS
-- Error messages on the card payment form are not display on checkout. FAIL - Jquery issue
+- Error messages on the card payment form are not display on checkout. PASS
 - Button names were displaying Edit features and Edit Bugs, these should be singular PASS
 
 ## Responsiveness Testing
