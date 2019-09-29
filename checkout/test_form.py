@@ -1,6 +1,8 @@
 from django.test import TestCase
 from .forms import MakePaymentForm, OrderForm
 
+"""Form tests for the checkout app"""
+
 class TestMakePaymentForm(TestCase):
     
     def test_payment_form_valid_input(self):

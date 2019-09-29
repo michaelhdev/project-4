@@ -1,6 +1,8 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 
+"""View tests for the checkout app"""
+
 class TestCheckoutViews(TestCase):
     def setUp(self):
         user = User.objects.create_user(username='testUser30', password='testPassword')

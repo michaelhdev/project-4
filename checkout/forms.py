@@ -1,6 +1,7 @@
 from django import forms
 from .models import Order
 
+"""Form declarations for the checkout app"""
 
 class MakePaymentForm(forms.Form):
 

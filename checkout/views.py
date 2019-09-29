@@ -14,6 +14,8 @@ stripe.api_key = settings.STRIPE_SECRET
 
 @login_required()
 def checkout(request):
+    """A View that uses stripe to accept payments and renders the features page if payment is successful"""
+    
     if request.method == "POST":
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
