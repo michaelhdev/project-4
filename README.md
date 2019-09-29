@@ -330,6 +330,9 @@ Errors encountered when running the test cases have been rectified
 ## Responsiveness Testing
 The responsiveness was tested extensively on different devises using Chromes developement tools.
 
+## Defensive Forced Browsing testing
+I added the django authentication feature @login_required to all the views that require the user to be logged in. This stops forceful browsing.
+
 
 ## Deployment
 
