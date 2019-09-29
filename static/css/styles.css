@@ -1,3 +1,4 @@
+/*---------------Features and bugs pages----------------*/
 .pending{
     background-color: red;
 }
@@ -27,6 +28,66 @@
     font-size: 2em;
 }
 
+.featureBugButton{
+  width: 100%;
+  margin-bottom: 20px;
+}
+.sortWrapper{
+ border-top: 20px; 
+}
+/*---------------Checkout and Cart pages----------------*/
+
+.total-container{
+    text-align: right;
+}
+
+.cart-icon{
+    width:200px;
+}
+
+/*---------------Dashboard page ----------------*/
+
+.dashboard-button{
+    text-align: center;
+}
+
+.welcomeName{
+  color: black;
+  font-size: 20px;
+}
+
+.signUpContainer{
+  text-align: center;
+}
+
+/*---------------login pages ----------------*/
+
+.loginForm{
+  width: 50%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.registrationContainer{
+  text-align: center;
+}
+
+.loginContainer{
+  text-align: center;
+}
+
+/*---------------Bug/feature detail pages ----------------*/
+
+.commentContainer{
+  background-color: #e3e3e3;
+}
+
+/*---------------Alert messages----------------*/
+.errorlist{
+  color: #b94a48;
+background-color: #f2dede;
+border-color: #eed3d7;
+}
 
 .alert {
 padding: 8px 35px 8px 14px;
@@ -60,21 +121,9 @@ border-color: #eed3d7;
     border-radius: 9px;
 }
 
-.cart-icon{
-    width:200px;
-}
-
 .label-warning[href],
 .badge-warning[href] {
     background-color: #c67605;
-}
-
-.total-container{
-    text-align: right;
-}
-
-.dashboard-button{
-    text-align: center;
 }
 
 .badge {
@@ -124,42 +173,9 @@ border-color: #eed3d7;
   background-color: #1a1a1a;
 }
 
-.loginForm{
-  width: 50%;
-  margin: 0 auto;
-  text-align: left;
-}
 
-.registrationContainer{
-  text-align: center;
-}
 
-.loginContainer{
-  text-align: center;
-}
-
-.commentContainer{
-  background-color: #e3e3e3;
-}
-.welcomeName{
-  color: black;
-  font-size: 20px;
-}
-
-.featureBugButton{
-  width: 100%;
-  margin-bottom: 20px;
-}
-.sortWrapper{
- border-top: 20px; 
-}
-.errorlist{
-  color: #b94a48;
-background-color: #f2dede;
-border-color: #eed3d7;
-}
-
-/* Buttons */
+/*---------------Buttons ----------------*/
 
 .btn--cta {
     font-weight: bold;
@@ -182,9 +198,8 @@ border-color: #eed3d7;
     color: white;
 }
 
-.signUpContainer{
-  text-align: center;
-}
+/*---------------Media queries ----------------*/
+
 @media(min-width:600px){
    .featureBugButton{
      width: 100%;
