@@ -2,6 +2,8 @@ from django.test import TestCase
 from features.models import Feature
 from django.contrib.auth.models import User
 
+"""View tests for the cart app"""
+
 class TestCartViews(TestCase):
     def setUp(self):
         user = User.objects.create_user(username='testUser30', password='testPassword')
