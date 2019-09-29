@@ -3,7 +3,9 @@ from .models import Bug, CommentForBug
 from django.contrib import auth
 from django.contrib.auth.models import User
 
-
+"""
+    Tests for bug views
+"""
 class TestViews(TestCase):
     
     def setUp(self):

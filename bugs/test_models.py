@@ -2,6 +2,9 @@ from django.test import TestCase
 from .models import Bug, CommentForBug
 from django.contrib.auth.models import User
 
+"""
+    Tests for bug models
+"""
 
 class TestBugModel(TestCase):
 

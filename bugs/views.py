@@ -7,8 +7,8 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def get_bugs(request):
     """
-    A view that will return a list
-    of Bugs that were display them on the 'bugs.html' template
+    A view that will return a list of Bugs and display them on the 'bugs.html' template.
+    It also checks the comment count in case a comment was deleted by the admin
     """
     bugs = Bug.objects.all().order_by('created_date')
     
@@ -22,11 +22,10 @@ def get_bugs(request):
 @login_required
 def bug_detail(request, pk):
     """
-    A view that returns a single
-    bug object based on the bug ID (pk) and
-    render it to the 'bugdetail.html' template.
-    Or return a 404 error if the bug is
-    not found
+    A view that returns a single bug object based on the bug ID (pk) and
+    renders it to the 'bugdetail.html' template or returns a 404 error if the bug is
+    not found. It save a comment to the datbase is a comment is returned
+    in the POST method
     """
     bug = get_object_or_404(Bug, pk=pk)
     user = request.user
@@ -50,11 +49,8 @@ def bug_detail(request, pk):
 @login_required 
 def vote_bug(request, pk):
     """
-    A view that returns a single
-    bug object based on the bug ID (pk) and
-    render it to the 'bugdetail.html' template.
-    Or return a 404 error if the bug is
-    not found
+    A view that adds a users vote if they have not voted on the bug before
+    or deletes their vote if they have voted on the bug
     """
     bug = get_object_or_404(Bug, pk=pk)
     user = request.user
@@ -69,8 +65,7 @@ def vote_bug(request, pk):
 @login_required   
 def create_or_edit_bug(request, pk=None):
     """
-    A view that allows us to create
-    or edit a bug depending if the bug ID
+    A view that allows us to create or edit a bug depending if the bug ID
     is null or not
     """
     bug = get_object_or_404(Bug, pk=pk) if pk else None
@@ -87,7 +82,10 @@ def create_or_edit_bug(request, pk=None):
 
 @login_required
 def sort_bugs(request):
-    
+    """
+    A view the sorts the bugs based on the users section
+    and renders it to the bugs.html page
+    """
     selection = request.GET['sort_by']
     
     bugs = Bug.objects.all().order_by(selection)

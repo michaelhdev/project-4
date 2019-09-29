@@ -1,6 +1,10 @@
 from django.test import TestCase
 from .forms import BugForm, CommentForBugForm
 
+"""
+    Tests for bug forms
+"""
+
 class TestBugForm(TestCase):
     
     def test_cant_create_bug_with_no_info(self):
