@@ -77,7 +77,13 @@ def sort_features(request):
     
     selection = request.GET['sort_by']
     
-    features = Feature.objects.all().order_by(selection)
+    if selection == 'totalDonation':
+       
+        features = Feature.objects.all().order_by('-totalDonation')
+    
+    else:
+        
+        features = Feature.objects.all().order_by(selection)
         
     return render(request, "features.html", {'features': features})
     

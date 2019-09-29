@@ -164,7 +164,9 @@ The technologies used for this project are listed below in no particualr order.
 
 13. [Git/Github](https://github.com/michaelhdev/project-4)
 
-14. AWS Cloud9
+14. [CanvasJs](https://canvasjs.com/) 
+
+15. AWS Cloud9
 
 ## Testing
 The application was tested constantly as it was being developed. Debugging was enabled during developement and any issues or bugs were fixed.
@@ -321,8 +323,9 @@ Errors encountered when running the test cases have been rectified
 
 ## Issues
 - Give less space for votes – bugs/features with large names are extending their container. 
-- Bugs don’t appear to be displaying votes in descending order initially, they appear to be assending 
 - The percentages on the graph are not appearing correctly
+- When sorting features by donations, the are returned assending it would be better decending
+- You can force browse to sections of the site when you are not logged in
 
 ## Responsiveness Testing
 The responsiveness was tested extensively on different devises using Chromes developement tools.
@@ -346,7 +349,7 @@ The requirements file is displayed below.
 
 <p align="center"><img src="static/img/requirements.jpg"/></p>
 
-The project was deployed to Heroku at and early stage in the developemnt process and having been integrated with meant there were never any issues deploying.
+The project was deployed to Heroku at and early stage in the developemnt process and having been integrated with Git meant there were never any issues deploying.
 
 The postgresql, email servers and stripe secret keys were add as environment variables in Heroku.
 
@@ -354,6 +357,9 @@ The postgresql, email servers and stripe secret keys were add as environment var
 
 
 ## Credits
+
+### Content
+- Free copyright stock images were used
 
 ### Acknowledgements
 
