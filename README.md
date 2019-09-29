@@ -77,10 +77,10 @@ User Stories
 Wire Frame Diagrams
 ----------
 
-<p align="center"><img src="static/img"/></p>
-<p align="center"><img src="static/img/"/></p>
-<p align="center"><img src="static/img/"/></p>
-<p align="center"><img src="static/img/"/></p>
+<p align="center"><img src="static/img/wireframe1.jpg"/></p>
+<p align="center"><img src="static/img/wireframe2.jpg"/></p>
+<p align="center"><img src="static/img/wireframe3.jpg"/></p>
+<p align="center"><img src="static/img/wireframe4.jpg"/></p>
 
 ## Features
 
