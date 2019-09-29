@@ -2,8 +2,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Bug, CommentForBug
 from .forms import BugForm, CommentForBugForm
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def get_bugs(request):
     """
     A view that will return a list
@@ -18,7 +19,7 @@ def get_bugs(request):
         
     return render(request, "bugs.html", {'bugs': bugs})
 
-
+@login_required
 def bug_detail(request, pk):
     """
     A view that returns a single
@@ -46,7 +47,7 @@ def bug_detail(request, pk):
         
     return render(request, "bugDetail.html", {'bug': bug, 'comments' : bugComments, 'commentForm': bugCommentForm})
 
-    
+@login_required 
 def vote_bug(request, pk):
     """
     A view that returns a single
@@ -64,7 +65,8 @@ def vote_bug(request, pk):
         bug.votes.add(user)
         bug.save()
     return redirect(get_bugs)
-    
+
+@login_required   
 def create_or_edit_bug(request, pk=None):
     """
     A view that allows us to create
@@ -82,7 +84,8 @@ def create_or_edit_bug(request, pk=None):
     else:
         form = BugForm(instance=bug)
     return render(request, 'bugForm.html', {'form': form})
-    
+
+@login_required
 def sort_bugs(request):
     
     selection = request.GET['sort_by']
